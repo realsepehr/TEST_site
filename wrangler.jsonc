@@ -6,7 +6,8 @@
   "compatibility_flags": ["python_workers"],
   "assets": {
     "directory": ".",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    "run_worker_first": true
   },
   "vars": {
     "CLOUDFLARE_WORKERS": "1",
@@ -15,14 +16,8 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "hafez-store-db",
-      "database_id": "PUT_YOUR_D1_DATABASE_ID_HERE"
-    }
-  ],
-  "r2_buckets": [
-    {
-      "binding": "MEDIA",
-      "bucket_name": "hafez-store-media"
+      "database_name": "ez-081f22-db",
+      "database_id": "e0995e05-3fdb-41a0-8211-a4a5c25f8ef9"
     }
   ]
 }
