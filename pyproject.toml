@@ -1,0 +1,15 @@
+[project]
+name = "hafez-store"
+version = "2.0.0"
+description = "Hafez store - Flask on Cloudflare Workers with D1 and R2"
+requires-python = ">=3.12"
+dependencies = [
+  "flask==3.1.1",
+  "werkzeug==3.1.3"
+]
+
+[dependency-groups]
+dev = [
+  "workers-py",
+  "workers-runtime-sdk"
+]

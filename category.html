@@ -1,0 +1,3 @@
+{% extends "base.html" %}{% block title %}{{category.name}} | {{site.store_name}}{% endblock %}{% block content %}
+<section class="container section"><span class="eyebrow">دسته‌بندی</span><h1>{{category.name}}</h1><div class="grid">{% for p in products %}<a class="card" href="{{url_for('product',slug=p.slug)}}"><img src="{{product_image_src(p)}}" alt="{{p.name}}" loading="lazy" onerror="this.style.display='none'"><div class="card-body"><h3>{{p.name}}</h3>{% if p.brand %}<p class="muted">{{p.brand}}</p>{% endif %}{% if p.price %}<strong>{{p.price}} تومان</strong>{% endif %}</div></a>{% else %}<div class="empty">محصولی در این دسته ثبت نشده است.</div>{% endfor %}</div></section>
+{% endblock %}

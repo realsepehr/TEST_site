@@ -1,0 +1,32 @@
+/* HAFEZ ELITE 2026 — visual-only layer. No admin/business logic changes. */
+:root{--hz-gold:#e0bd6a;--hz-gold2:#9b7430;--hz-ink:#080b11;--hz-paper:#f7f5ef}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
+::selection{background:#d9b66a;color:#111}
+.site-header{box-shadow:0 10px 45px #0003!important}
+.brand{letter-spacing:-.5px}
+.brand span{background:linear-gradient(100deg,#fff 20%,#e8c878 48%,#fff 76%);background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:hzShine 6s linear infinite}
+@keyframes hzShine{to{background-position:-220% center}}
+.hero-showcase{background:radial-gradient(circle at 80% 0,#e7d6aa55,transparent 32%),linear-gradient(180deg,#eeeae2,#faf9f6)!important}
+.hero-card{border-radius:22px!important;box-shadow:0 18px 55px #0002!important;transform:translateZ(0)}
+.hero-card:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(125deg,transparent 30%,#ffffff16 48%,transparent 62%);transform:translateX(-120%);transition:transform .9s;pointer-events:none}
+.hero-card:hover:before{transform:translateX(120%)}
+.hero-card-1{box-shadow:0 25px 80px #0003!important}
+.hero-copy h2{font-weight:850;letter-spacing:-.5px}
+.hero-badge,.product-badge{background:linear-gradient(135deg,#f0d38b,#b68a3c)!important;color:#151515!important;border:1px solid #fff8;box-shadow:0 8px 25px #0004!important}
+.intro-modern{border-top:1px solid #d9b66a22;border-bottom:1px solid #d9b66a22}
+.modern-btn{background:linear-gradient(135deg,#f0d38b,#b98c3e)!important;color:#111!important}
+.modern-cat{border-radius:20px!important}
+.modern-product{border-radius:22px!important}
+.modern-pic{height:300px!important}
+.modern-pic img{transition:transform .65s cubic-bezier(.2,.8,.2,1),filter .35s!important}
+.modern-product:hover .modern-pic img{filter:saturate(1.06) contrast(1.02);transform:scale(1.075)!important}
+.modern-product:hover{transform:translateY(-8px)!important}
+.modern-body h3{font-weight:800}
+.view-pill{background:linear-gradient(90deg,#0b0e14ee,#1a2029ee)!important;border:1px solid #e0bd6a44}
+.section-head h2{font-weight:850}
+.topbar{letter-spacing:.1px}
+.flash{border:1px solid #d7b66f33}
+footer{background:linear-gradient(180deg,#10141b,#080b10)!important;color:#dfe3ea!important}
+footer p,footer span{color:#9da5b2}
+@media(max-width:700px){.hero-card{border-radius:16px!important}.modern-pic{height:270px!important}.modern-product:hover{transform:translateY(-4px)!important}.brand span{animation:none}}
+@media(prefers-reduced-motion:reduce){.brand span{animation:none}}

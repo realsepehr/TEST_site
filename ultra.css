@@ -1,0 +1,36 @@
+/* Hafez Ultra polish — visual-only layer, keeps existing layout/admin flows intact */
+:root{--ultra-gold:#e8c878;--ultra-ink:#0a0d13;--ultra-glow:#d7b66f55}
+::selection{background:#d7b66f;color:#111}
+body{background-image:radial-gradient(circle at 15% 10%,#d7b66f08,transparent 22%),radial-gradient(circle at 90% 65%,#64749d08,transparent 26%)}
+.site-header{box-shadow:0 18px 60px #00000018}
+.site-header:after{content:'';position:absolute;inset:auto 0 0 0;height:1px;background:linear-gradient(90deg,transparent,#d7b66f66,transparent);pointer-events:none}
+.brand{letter-spacing:-.4px}
+.brand span{background:linear-gradient(90deg,#fff,#e8c878 70%,#fff);background-size:180% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:ultraShine 6s ease-in-out infinite}
+.hero{isolation:isolate}
+.hero:after{content:'';position:absolute;width:520px;height:520px;border:1px solid #d7b66f16;border-radius:50%;right:-220px;top:-240px;box-shadow:0 0 120px #d7b66f10;animation:ultraPulse 7s ease-in-out infinite;pointer-events:none}
+.hero h1{text-shadow:0 10px 45px #0008}
+.eyebrow{box-shadow:0 0 35px #d7b66f10}
+.hero-search{transition:.3s;box-shadow:0 25px 80px #0005,0 0 0 1px #d7b66f00}
+.hero-search:focus-within{transform:translateY(-2px);box-shadow:0 30px 90px #0007,0 0 0 4px #d7b66f14}
+.btn,.admin-pill{position:relative;overflow:hidden}
+.btn:before,.admin-pill:before{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,#fff9 48%,transparent 70%);transform:translateX(-130%);transition:.7s}
+.btn:hover:before,.admin-pill:hover:before{transform:translateX(130%)}
+.card,.cat,.filters,.cta,.store-map{box-shadow:0 18px 55px #0000000a}
+.card{transform:translateZ(0)}
+.card:hover{box-shadow:0 32px 85px #00000018,0 0 0 1px #d7b66f1c}
+.card h3{transition:.25s}
+.card:hover h3{color:#8b6a30}
+.pic{background:radial-gradient(circle at 50% 35%,#fff,#eeeae1 72%)}
+.pic img{mix-blend-mode:multiply}
+.cat:hover{box-shadow:0 24px 65px #00000014,0 0 0 1px #d7b66f22}
+.section-head{position:relative}
+.section-head:after{content:'';position:absolute;bottom:-12px;right:0;width:76px;height:2px;border-radius:10px;background:linear-gradient(90deg,#d7b66f,transparent)}
+.stats-strip{position:relative;overflow:hidden}
+.stats-strip:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,#d7b66f08,transparent);transform:translateX(-100%);animation:ultraSweep 8s linear infinite}
+.mobile-nav{backdrop-filter:blur(20px);box-shadow:0 -18px 50px #00000020}
+#pageProgress{position:fixed;top:0;right:0;left:0;height:2px;transform-origin:right;z-index:1000;background:linear-gradient(90deg,#9b762d,#f3dfa7,#9b762d);box-shadow:0 0 18px #d7b66f88}
+@keyframes ultraShine{0%,100%{background-position:0%}50%{background-position:100%}}
+@keyframes ultraPulse{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.06);opacity:1}}
+@keyframes ultraSweep{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+@media(max-width:700px){.hero:after{width:300px;height:300px;right:-160px;top:-120px}.hero h1{text-shadow:0 8px 30px #0008}.section-head:after{width:55px}.card:hover,.cat:hover{transform:none}}

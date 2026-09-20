@@ -1,0 +1,28 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "hafez-store",
+  "main": "src_worker.py",
+  "compatibility_date": "2026-09-19",
+  "compatibility_flags": ["python_workers"],
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS"
+  },
+  "vars": {
+    "CLOUDFLARE_WORKERS": "1",
+    "TRUST_PROXY_HEADERS": "1"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "hafez-store-db",
+      "database_id": "PUT_YOUR_D1_DATABASE_ID_HERE"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "MEDIA",
+      "bucket_name": "hafez-store-media"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}مقایسه محصولات | {{settings.site_name}}{% endblock %}
+{% block content %}
+<main class="wrap section compare-page" dir="rtl">
+<div class="compare-head"><div><span class="section-kicker">HAFEZ / COMPARE</span><h1>مقایسه محصولات</h1><p>مشخصات کلیدی محصولات انتخاب‌شده را کنار هم ببین.</p></div><a href="/products">← بازگشت به محصولات</a></div>
+{% if products|length >= 2 %}
+<div class="compare-table-wrap"><table class="compare-table"><thead><tr><th>ویژگی</th>{% for p in products %}<th><div class="compare-product"><img src="{{product_image_src(p)}}" alt="{{p.name}}"><b>{{p.name}}</b></div></th>{% endfor %}</tr></thead><tbody>
+<tr><th>دسته‌بندی</th>{% for p in products %}<td>{{p.category or '—'}}</td>{% endfor %}</tr>
+<tr><th>برند</th>{% for p in products %}<td>{{p.brand or '—'}}</td>{% endfor %}</tr>
+<tr><th>مدل</th>{% for p in products %}<td>{{p.model or '—'}}</td>{% endfor %}</tr>
+<tr><th>کد کالا</th>{% for p in products %}<td>{{p.sku or '—'}}</td>{% endfor %}</tr>
+<tr><th>قیمت</th>{% for p in products %}<td class="price-cell">{% if p.sale_price and p.sale_price>0 %}{{"{:,.0f}".format(p.sale_price)}} تومان{% elif p.price and p.price>0 %}{{"{:,.0f}".format(p.price)}} تومان{% else %}تماس برای قیمت{% endif %}</td>{% endfor %}</tr>
+<tr><th>موجودی</th>{% for p in products %}<td>{% if p.stock and p.stock>0 %}<span class="yes">موجود</span>{% else %}<span class="no">ناموجود</span>{% endif %}</td>{% endfor %}</tr>
+<tr><th>رنگ</th>{% for p in products %}<td>{{p.colors or p.color or '—'}}</td>{% endfor %}</tr>
+<tr><th>جنس</th>{% for p in products %}<td>{{p.material or '—'}}</td>{% endfor %}</tr>
+<tr><th>آبکاری / فینیش</th>{% for p in products %}<td>{{p.finish or '—'}}</td>{% endfor %}</tr>
+<tr><th>گارانتی</th>{% for p in products %}<td>{{p.warranty or '—'}}</td>{% endfor %}</tr>
+<tr><th></th>{% for p in products %}<td><a class="open-product" href="/product/{{p.slug}}">مشاهده محصول ←</a></td>{% endfor %}</tr>
+</tbody></table></div>
+{% else %}<div class="compare-empty"><strong>برای مقایسه حداقل ۲ محصول لازم است.</strong><p>به کاتالوگ برگرد و محصولات موردنظر را انتخاب کن.</p><a href="/products">رفتن به کاتالوگ</a></div>{% endif %}
+</main>
+<style>.compare-page{padding:55px 0 100px}.compare-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:25px}.compare-head h1{font-size:clamp(32px,5vw,56px);margin:8px 0}.compare-head p{color:#777;font-size:12px}.compare-head>a{color:#8e6e32;font-size:10px;font-weight:900}.compare-table-wrap{overflow:auto;border:1px solid #e2ddd4;border-radius:24px;background:#fff;box-shadow:0 25px 70px #0000000d}.compare-table{border-collapse:collapse;width:100%;min-width:850px}.compare-table th,.compare-table td{padding:16px 14px;border-bottom:1px solid #eee9df;text-align:right;font-size:10px;vertical-align:middle}.compare-table thead th{background:#f7f4ed;position:sticky;top:0}.compare-table tbody th{width:130px;color:#777;background:#fbfaf7;font-weight:800}.compare-product{display:grid;gap:8px}.compare-product img{width:130px;height:110px;object-fit:contain;border-radius:14px;background:#f3f0e9}.price-cell{font-weight:900}.yes{color:#27734a;font-weight:900}.no{color:#a24b4b;font-weight:900}.open-product{display:inline-block;padding:8px 12px;border-radius:10px;background:#171b22;color:#fff!important;font-weight:900}.compare-empty{padding:80px 20px;text-align:center;background:#fff;border:1px solid #e5dfd3;border-radius:24px}.compare-empty strong{font-size:20px}.compare-empty p{color:#888}.compare-empty a{display:inline-block;margin-top:10px;background:#171b22;color:#fff;padding:10px 15px;border-radius:10px;font-size:10px;font-weight:900}@media(max-width:600px){.compare-page{padding-top:25px}.compare-head{display:block}.compare-head>a{display:inline-block;margin-top:15px}}
+</style>
+{% endblock %}

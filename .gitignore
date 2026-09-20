@@ -1,0 +1,18 @@
+# Local secrets and environment files
+.env
+.env.*
+!.env.example
+
+# SQLite / runtime state
+instance/
+*.db
+backup_*.db
+store.db
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Uploaded media
+static/uploads/*
+!static/uploads/.gitkeep
