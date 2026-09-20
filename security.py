@@ -1,6 +1,7 @@
 """Defense-in-depth security hardening for Hafez store."""
 import os
 import time
+import uuid
 from pathlib import Path
 from collections import defaultdict, deque
 from flask import abort, request
